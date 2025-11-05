@@ -1,0 +1,189 @@
+:root {
+  --azul: #007bff;
+  --azul-escuro: #0056b3;
+  --fundo: #f4f7fb;
+  --texto: #222;
+  --caixa: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+header {
+  background: var(--azul);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.top-buttons button {
+  background: white;
+  color: var(--azul);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.top-buttons button:hover {
+  background: var(--azul-escuro);
+  color: white;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+label {
+  font-weight: 600;
+}
+
+select, input[type="number"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+input:focus {
+  border-color: var(--azul);
+  outline: none;
+  box-shadow: 0 0 4px rgba(0,123,255,0.3);
+}
+
+.section-box {
+  background: var(--caixa);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.add-btn {
+  width: 100%;
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--azul-escuro);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  flex: 1;
+  min-width: 150px;
+  background: var(--azul);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.actions button:hover {
+  background: var(--azul-escuro);
+}
+
+#progresso {
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+#progresso-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--azul);
+  transition: width 0.3s ease;
+}
+
+.resultado {
+  background: var(--caixa);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+canvas {
+  margin-top: 25px;
+  width: 100%;
+  max-height: 350px;
+}
+
+#popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--azul);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #777;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Flow</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Money Flow Logo">
+      <h1>Money Flow</h1>
+    </div>
+    <div class="top-buttons">
+      <button onclick="salvarFluxo()">💾 Salvar</button>
+      <button onclick="document.getElementById('inputCarregar').click()">📂 Carregar</button>
+      <button onclick="mostrarAjuda()">❔ Ajuda</button>
+      <input type="file" id="inputCarregar" accept=".fc" style="display:none" onchange="carregarFluxo(event)">
+    </div>
+  </header>
+
+  <main>
+    <label>Período:</label>
+    <select id="periodo">
+      <option value="dias">Dias</option>
+      <option value="meses" selected>Meses</option>
+      <option value="anos">Anos</option>
+    </select>
+
+    <section class="section-box">
+      <h3>Entradas (Receitas)</h3>
+      <div id="entradasContainer"></div>
+      <button class="add-btn" onclick="adicionarEntrada()">+ Adicionar entrada</button>
+    </section>
+
+    <section class="section-box">
+      <h3>Custos</h3>
+      <div id="custosContainer"></div>
+      <button class="add-btn" onclick="adicionarCusto()">+ Adicionar custo</button>
+    </section>
+
+    <div class="actions">
+      <button onclick="carregarEmpresa()">🏢 Carregar exemplo</button>
+      <button onclick="calcularResultado()">📊 Calcular resultado</button>
+      <button onclick="iniciarNovoMes()">🗓️ Novo mês</button>
+    </div>
+
+    <div id="progresso"><div id="progresso-bar"></div></div>
+    <div id="resultado"></div>
+    <canvas id="grafico"></canvas>
+  </main>
+
+  <div id="popup"></div>
+  <footer>© 2025 Money Flow - Criado por Yuri</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
